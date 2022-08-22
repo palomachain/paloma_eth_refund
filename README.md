@@ -3,7 +3,8 @@
 ## ApeWorx installation
 
 ```sh
-pipx install eth-ape infura alchemy vyper foundry
+pipx install eth-ape
+ape plugins install infura alchemy vyper foundry
 ```
 
 ## Foundry installation
