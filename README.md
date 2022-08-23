@@ -4,7 +4,7 @@
 
 ```sh
 pipx install eth-ape
-ape plugins install infura alchemy vyper foundry
+ape plugins install infura vyper etherscan
 ```
 
 ## Foundry installation
