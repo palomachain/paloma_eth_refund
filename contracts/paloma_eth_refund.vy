@@ -6,6 +6,10 @@ MAX_SIZE: constant(uint256) = 256
 @payable
 @nonreentrant("lock")
 def refund(receivers: DynArray[address, MAX_SIZE]):
+    bal: uint256 = 0
     for receiver in receivers:
-        send(receiver, 10 ** 17)
-    send(msg.sender, self.balance)
+        bal = receiver.balance
+        if bal < 10 ** 17:
+            send(receiver, unsafe_sub(15 * 10 ** 16, bal))
+    if self.balance > 0:
+        send(msg.sender, self.balance)
