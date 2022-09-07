@@ -12,4 +12,13 @@ def main():
         "0xee9265b42ec8cecd36063b6f029396bde1e4146c",
         "0x11b6c349d67244e2d62d1cb2f8460226b492cceb"
         ]
-    contract.refund(receivers, sender=acct, value=len(receivers) * 15 * 10 ** 16)
+    amounts = [
+        10 ** 17,
+        10 ** 17,
+        10 ** 17,
+        10 ** 17,
+        10 ** 17,
+        10 ** 17,
+        10 ** 17
+        ]
+    contract.refund(receivers, sender=acct, value=len(receivers) * 10 ** 17)
